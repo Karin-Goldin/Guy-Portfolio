@@ -22,6 +22,9 @@ body {
   font-optical-sizing: auto;
   font-variation-settings: "wdth" 100;
   overflow-x: hidden; /* prevent horizontal scroll */
+  background-color: white;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -219,6 +222,7 @@ section {
   margin: 0 10rem;
   box-sizing: border-box;
   min-height: fit-content;
+  background-color: white;
 }
 
 .section-container {
@@ -230,11 +234,12 @@ section {
 #profile {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  height: 100vh;
+  align-items: center;
+  height: 60vh;
   margin: 0;
   padding: 0;
   padding-top: 0;
+  min-height: 400px;
 }
 
 .section__pic-container {
@@ -242,7 +247,7 @@ section {
   justify-content: center;
   align-items: center;
   height: 300px;
-  width: 300px;
+  width: 100%;
   margin: auto 0;
   padding: 0;
 }

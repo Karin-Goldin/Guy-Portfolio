@@ -30,6 +30,10 @@
   .section-container {
     display: block;
   }
+  /* Add breathing room before projects on tablet */
+  #projects {
+    margin-top: 2.5rem;
+  }
   .arrow {
     display: none;
   }
@@ -62,6 +66,21 @@
   #contact,
   footer {
     height: 40vh;
+  }
+  /* Push projects section further down on small phones */
+  #projects {
+    margin-top: 7rem;
+  }
+  /* Tighter mobile navbar spacing and move hamburger left */
+  #hamburger-nav {
+    padding: 0 1rem; /* reduce right padding */
+  }
+  #hamburger-nav .hamburger-menu {
+    margin-right: 0.25rem; /* nudge icon slightly left */
+  }
+  /* Override desktop logo left padding on mobile */
+  #hamburger-nav .logo {
+    padding-left: 1rem;
   }
   #profile {
     height: 100vh !important;

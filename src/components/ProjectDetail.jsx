@@ -33,20 +33,32 @@ function ProjectDetail() {
 
   return (
     <div className="project-detail-page">
-      {/* Background Video Section */}
+      {/* Background Video/GIF Section */}
       <div className="project-hero">
-        <video
-          src={project.backgroundGif}
-          className="project-background-gif"
-          autoPlay
-          loop
-          muted
-          playsInline
-          style={{
-            transform: `scale(${1 + scrollY * 0.0005})`,
-            transformOrigin: "center center",
-          }}
-        />
+        {project.backgroundGif.endsWith(".gif") ? (
+          <img
+            src={project.backgroundGif}
+            className="project-background-gif"
+            alt={project.title}
+            style={{
+              transform: `scale(${1 + scrollY * 0.0005})`,
+              transformOrigin: "center center",
+            }}
+          />
+        ) : (
+          <video
+            src={project.backgroundGif}
+            className="project-background-gif"
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{
+              transform: `scale(${1 + scrollY * 0.0005})`,
+              transformOrigin: "center center",
+            }}
+          />
+        )}
       </div>
 
       {/* Description Section */}

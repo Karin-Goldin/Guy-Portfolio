@@ -235,7 +235,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60vh;
+  height: 80vh; /* taller so projects are below the fold */
   margin: 0;
   padding: 0;
   padding-top: 0;
@@ -458,6 +458,20 @@ article .icon {
 
 #projects {
   position: relative;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  margin-top: 8rem; /* push projects further below profile */
+  /* Ensure anchor navigation shows the section title below sticky nav */
+  scroll-margin-top: 15vh;
+}
+
+/* Hide projects section only when profile section is in the viewport */
+body.profile-in-view #projects {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 .color-container {
@@ -560,26 +574,131 @@ article .icon {
   line-height: 1.4;
 }
 
-/* Folder styling */
-.folder-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Folder Card Styling */
+.folder-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   height: 100%;
-  width: 100%;
-  background-color: #f8f9fa;
-  border: 2px solid #d1d5db;
-  border-radius: 0.5rem;
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
-.folder-title {
-  font-size: 1.2rem;
+.folder-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.folder-preview {
+  position: relative;
+  height: 280px;
+  background: #f8f9fa;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2px;
+  padding: 2px;
+}
+
+.preview-item {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.preview-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.05);
+  transition: opacity 0.3s ease;
+}
+
+.folder-card:hover .preview-item::after {
+  opacity: 0;
+}
+
+.folder-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.95),
+    rgba(147, 51, 234, 0.95)
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.folder-card:hover .folder-overlay {
+  opacity: 0;
+}
+
+.folder-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+}
+
+.folder-count {
+  color: white;
+  font-size: 18px;
   font-weight: 600;
-  color: #333;
-  margin: 0;
   text-align: center;
-  padding: 1rem;
+}
+
+.folder-info {
+  padding: 24px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.folder-title-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+}
+
+.folder-subtitle {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+/* Stacked effect for Gaming folder */
+.folder-card.stacked {
+  position: relative;
+}
+
+.folder-card.stacked::before,
+.folder-card.stacked::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: -1;
+}
+
+.folder-card.stacked::before {
+  transform: translateY(-4px) translateX(-4px) scale(0.98);
+  opacity: 0.5;
+}
+
+.folder-card.stacked::after {
+  transform: translateY(-8px) translateX(-8px) scale(0.96);
+  opacity: 0.3;
 }
 
 /* Video container with GIF poster */

@@ -24,4 +24,30 @@ export const projects = {
       "https://player.vimeo.com/video/1128816164?autoplay=0&loop=1&title=0&byline=0&portrait=0",
     backgroundGif: "/assets/cut-for-gif.mp4",
   },
+  earthday: {
+    title: "Earthday",
+    longDescription:
+      "In 2021-2022, Netafim launched a powerful Earth Day campaign, fostering global collaboration among citizens to take impactful steps toward sustainability and reducing their carbon footprint. Primarily promoted through Facebook, this initiative saw widespread engagement. I had the privilege of contributing to this crucial project by creating two animated explainer videos for the campaign. This collaboration with Netafim has been particularly meaningful to me over recent years, and I thoroughly enjoyed contributing to such an important cause.",
+    client: "NETAFIM",
+    date: "18/02/22",
+    role: "DESIGN",
+    role2: "ILLUSTRATION",
+    role3: "ANIMATION",
+    videoUrl:
+      "https://player.vimeo.com/video/1130848081?autoplay=0&loop=1&title=0&byline=0&portrait=0",
+    backgroundGif: "/assets/earthday.gif",
+  },
+  showreel: {
+    title: "Showreel 2025",
+    longDescription:
+      "Here’s my showreel! It’s a vibrant collection showcasing some of the exciting projects and collaborations that have shaped my recent years. What drives me? A pure love for dynamic storytelling and expressive typography. I bring these together to create playful, high‑energy visuals that reflect my passion for design and motion. Consider this reel a snapshot of my creative journey so far — and definitely just the beginning!",
+    client: "GUY GOLDIN",
+    date: "23/10/25",
+    role: "DESIGN",
+    role2: "ILLUSTRATION",
+    role3: "ANIMATION",
+    videoUrl:
+      "https://player.vimeo.com/video/1130821059?autoplay=0&loop=1&title=0&byline=0&portrait=0",
+    backgroundGif: "/assets/showreel.gif",
+  },
 };

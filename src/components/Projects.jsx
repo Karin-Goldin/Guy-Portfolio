@@ -8,7 +8,7 @@ function Projects() {
       type: "video",
       projectId: "mojo", // Add projectId for navigation
       videoUrl: "https://vimeo.com/1127841129?share=copy&fl=sv&fe=ci",
-      poster: "./assets/backround-video.gif", // GIF poster for the video
+      poster: "/assets/backround-video.gif", // GIF poster for the video
       demoUrl: "https://vimeo.com/1127841129?share=copy&fl=sv&fe=ci",
     },
     {
@@ -16,7 +16,7 @@ function Projects() {
       type: "video",
       projectId: "photosynthesis", // Add projectId for navigation
       videoUrl: "https://vimeo.com/1128816164?share=copy&fl=sv&fe=ci",
-      poster: "./assets/cut-for-gif.mp4",
+      poster: "/assets/cut-for-gif.mp4",
       demoUrl: "https://vimeo.com/1128816164?share=copy&fl=sv&fe=ci",
     },
     {
@@ -38,14 +38,14 @@ function Projects() {
     {
       title: "LAYOUT - A Motion Design Series",
       type: "image",
-      image: "./assets/project-2.png",
+      image: "/assets/project-2.png",
       githubUrl: "https://github.com/",
       demoUrl: "https://github.com/",
     },
     {
       title: "Brand Identity Project",
       type: "image",
-      image: "./assets/project-3.png",
+      image: "/assets/project-3.png",
       githubUrl: "https://github.com/",
       demoUrl: "https://github.com/",
     },
@@ -192,7 +192,7 @@ function Projects() {
         </div>
       </div>
       <img
-        src="./assets/arrow.png"
+        src="/assets/arrow.png"
         alt="Arrow icon"
         className="icon arrow"
         onClick={() => (window.location.href = "./#contact")}

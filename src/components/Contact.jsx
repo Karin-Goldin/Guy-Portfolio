@@ -6,7 +6,7 @@ function Contact() {
       <div className="contact-info-upper-container">
         <div className="contact-info-container">
           <img
-            src="./assets/email.png"
+            src="/assets/email.png"
             alt="Email icon"
             className="icon contact-icon email-icon"
           />
@@ -16,7 +16,7 @@ function Contact() {
         </div>
         <div className="contact-info-container">
           <img
-            src="./assets/linkedin.png"
+            src="/assets/linkedin.png"
             alt="LinkedIn icon"
             className="icon contact-icon"
           />

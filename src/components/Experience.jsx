@@ -10,7 +10,7 @@ function Experience() {
             <div className="article-container">
               <article>
                 <img
-                  src="./assets/checkmark.png"
+                  src="/assets/checkmark.png"
                   alt="Experience icon"
                   className="icon"
                 />
@@ -21,7 +21,7 @@ function Experience() {
               </article>
               <article>
                 <img
-                  src="./assets/checkmark.png"
+                  src="/assets/checkmark.png"
                   alt="Experience icon"
                   className="icon"
                 />
@@ -32,7 +32,7 @@ function Experience() {
               </article>
               <article>
                 <img
-                  src="./assets/checkmark.png"
+                  src="/assets/checkmark.png"
                   alt="Experience icon"
                   className="icon"
                 />
@@ -43,7 +43,7 @@ function Experience() {
               </article>
               <article>
                 <img
-                  src="./assets/checkmark.png"
+                  src="/assets/checkmark.png"
                   alt="Experience icon"
                   className="icon"
                 />
@@ -54,7 +54,7 @@ function Experience() {
               </article>
               <article>
                 <img
-                  src="./assets/checkmark.png"
+                  src="/assets/checkmark.png"
                   alt="Experience icon"
                   className="icon"
                 />
@@ -65,7 +65,7 @@ function Experience() {
               </article>
               <article>
                 <img
-                  src="./assets/checkmark.png"
+                  src="/assets/checkmark.png"
                   alt="Experience icon"
                   className="icon"
                 />
@@ -81,7 +81,7 @@ function Experience() {
             <div className="article-container">
               <article>
                 <img
-                  src="./assets/checkmark.png"
+                  src="/assets/checkmark.png"
                   alt="Experience icon"
                   className="icon"
                 />
@@ -92,7 +92,7 @@ function Experience() {
               </article>
               <article>
                 <img
-                  src="./assets/checkmark.png"
+                  src="/assets/checkmark.png"
                   alt="Experience icon"
                   className="icon"
                 />
@@ -103,7 +103,7 @@ function Experience() {
               </article>
               <article>
                 <img
-                  src="./assets/checkmark.png"
+                  src="/assets/checkmark.png"
                   alt="Experience icon"
                   className="icon"
                 />
@@ -114,7 +114,7 @@ function Experience() {
               </article>
               <article>
                 <img
-                  src="./assets/checkmark.png"
+                  src="/assets/checkmark.png"
                   alt="Experience icon"
                   className="icon"
                 />
@@ -128,7 +128,7 @@ function Experience() {
         </div>
       </div>
       <img
-        src="./assets/arrow.png"
+        src="/assets/arrow.png"
         alt="Arrow icon"
         className="icon arrow"
         onClick={() => (window.location.href = "./#projects")}

@@ -41,7 +41,7 @@ function Profile() {
     <section id="profile">
       <div className="section__pic-container">
         <img
-          src="./assets/hero-1_2.gif"
+          src="/assets/hero-1_2.gif"
           alt="Guy Goldin animated profile"
           className={`hero-gif ${isScrolled ? "behind-nav" : ""}`}
         />

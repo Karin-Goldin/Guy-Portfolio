@@ -6,7 +6,7 @@ function About() {
       <div className="section-container">
         <div className="section__pic-container">
           <img
-            src="./assets/about-pic.png"
+            src="/assets/about-pic.png"
             alt="Profile picture"
             className="about-pic"
           />
@@ -15,7 +15,7 @@ function About() {
           <div className="about-containers">
             <div className="details-container">
               <img
-                src="./assets/experience.png"
+                src="/assets/experience.png"
                 alt="Experience icon"
                 className="icon"
               />
@@ -27,7 +27,7 @@ function About() {
             </div>
             <div className="details-container">
               <img
-                src="./assets/education.png"
+                src="/assets/education.png"
                 alt="Education icon"
                 className="icon"
               />
@@ -62,7 +62,7 @@ function About() {
               <div className="article-container">
                 <article>
                   <img
-                    src="./assets/checkmark.png"
+                    src="/assets/checkmark.png"
                     alt="Experience icon"
                     className="icon"
                   />
@@ -73,7 +73,7 @@ function About() {
                 </article>
                 <article>
                   <img
-                    src="./assets/checkmark.png"
+                    src="/assets/checkmark.png"
                     alt="Experience icon"
                     className="icon"
                   />
@@ -84,7 +84,7 @@ function About() {
                 </article>
                 <article>
                   <img
-                    src="./assets/checkmark.png"
+                    src="/assets/checkmark.png"
                     alt="Experience icon"
                     className="icon"
                   />
@@ -95,7 +95,7 @@ function About() {
                 </article>
                 <article>
                   <img
-                    src="./assets/checkmark.png"
+                    src="/assets/checkmark.png"
                     alt="Experience icon"
                     className="icon"
                   />
@@ -106,7 +106,7 @@ function About() {
                 </article>
                 <article>
                   <img
-                    src="./assets/checkmark.png"
+                    src="/assets/checkmark.png"
                     alt="Experience icon"
                     className="icon"
                   />
@@ -117,7 +117,7 @@ function About() {
                 </article>
                 <article>
                   <img
-                    src="./assets/checkmark.png"
+                    src="/assets/checkmark.png"
                     alt="Experience icon"
                     className="icon"
                   />
@@ -133,7 +133,7 @@ function About() {
               <div className="article-container">
                 <article>
                   <img
-                    src="./assets/checkmark.png"
+                    src="/assets/checkmark.png"
                     alt="Experience icon"
                     className="icon"
                   />
@@ -144,7 +144,7 @@ function About() {
                 </article>
                 <article>
                   <img
-                    src="./assets/checkmark.png"
+                    src="/assets/checkmark.png"
                     alt="Experience icon"
                     className="icon"
                   />
@@ -155,7 +155,7 @@ function About() {
                 </article>
                 <article>
                   <img
-                    src="./assets/checkmark.png"
+                    src="/assets/checkmark.png"
                     alt="Experience icon"
                     className="icon"
                   />
@@ -166,7 +166,7 @@ function About() {
                 </article>
                 <article>
                   <img
-                    src="./assets/checkmark.png"
+                    src="/assets/checkmark.png"
                     alt="Experience icon"
                     className="icon"
                   />
@@ -182,7 +182,7 @@ function About() {
       </div>
 
       <img
-        src="./assets/arrow.png"
+        src="/assets/arrow.png"
         alt="Arrow icon"
         className="icon arrow"
         onClick={() => (window.location.href = "./#projects")}

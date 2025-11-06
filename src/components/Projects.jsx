@@ -54,7 +54,7 @@ function Projects() {
       type: "folder",
       isFolder: true,
       subtitle: "Interactive motion design",
-      projectCount: 8,
+      projectCount: 3,
       previewGradients: [
         "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
         "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
@@ -103,7 +103,10 @@ function Projects() {
                 <div
                   className={`folder-card ${project.stacked ? "stacked" : ""}`}
                   onClick={() => {
-                    // Add folder click handler if needed
+                    const folderId = project.title
+                      .toLowerCase()
+                      .replace(/\s+/g, "-");
+                    navigate(`/folder/${folderId}`);
                   }}
                 >
                   <div className="folder-preview">

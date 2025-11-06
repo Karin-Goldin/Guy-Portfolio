@@ -8,6 +8,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ProjectDetail from "./components/ProjectDetail";
+import FolderDetail from "./components/FolderDetail";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           }
         />
         <Route path="/project/:projectId" element={<ProjectDetail />} />
+        <Route path="/folder/:folderId" element={<FolderDetail />} />
       </Routes>
     </Router>
   );

@@ -50,4 +50,28 @@ export const projects = {
       "https://player.vimeo.com/video/1130821059?autoplay=0&loop=1&title=0&byline=0&portrait=0",
     backgroundGif: "/assets/showreel.gif",
   },
+  "web-anim-1": {
+    title: "Web Animation Project 1",
+    longDescription:
+      "An interactive web animation project showcasing modern motion design techniques and user engagement.",
+    client: "GUY GOLDIN",
+    date: "2024",
+    role: "DESIGN",
+    role2: "ANIMATION",
+    videoUrl:
+      "https://player.vimeo.com/video/1127841129?autoplay=0&loop=1&title=0&byline=0&portrait=0",
+    backgroundGif: "/assets/backround-video.mp4",
+  },
+  "web-anim-2": {
+    title: "Web Animation Project 2",
+    longDescription:
+      "Motion design for web interface, creating smooth and engaging user experiences through thoughtful animation.",
+    client: "GUY GOLDIN",
+    date: "2024",
+    role: "DESIGN",
+    role2: "ANIMATION",
+    videoUrl:
+      "https://player.vimeo.com/video/1128816164?autoplay=0&loop=1&title=0&byline=0&portrait=0",
+    backgroundGif: "/assets/cut-for-gif.mp4",
+  },
 };

@@ -40,10 +40,13 @@ function Profile() {
   return (
     <section id="profile">
       <div className="section__pic-container">
-        <img
-          src="/assets/hero-1_2.gif"
-          alt="Guy Goldin animated profile"
+        <video
+          src="/assets/hero-1_2.mp4"
           className={`hero-gif ${isScrolled ? "behind-nav" : ""}`}
+          autoPlay
+          loop
+          muted
+          playsInline
         />
       </div>
     </section>

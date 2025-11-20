@@ -31,7 +31,6 @@ function Profile() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    // Check on mount
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);

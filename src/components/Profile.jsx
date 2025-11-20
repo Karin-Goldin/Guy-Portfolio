@@ -40,8 +40,8 @@ function Profile() {
   return (
     <section id="profile">
       <div className="section__pic-container">
-        <video
-          src="/assets/hero-1_2.mp4"
+        <img
+          src="/assets/hero-1_2.gif"
           className={`hero-gif ${isScrolled ? "behind-nav" : ""}`}
           autoPlay
           loop

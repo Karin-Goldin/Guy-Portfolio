@@ -3,6 +3,13 @@ export const folders = {
     title: "Web Animations",
     projects: [
       {
+        title: "Aurora",
+        type: "lottie",
+        projectId: "aurora",
+        poster: "/assets/project-1.png",
+        description: "Behavioral design for digital platforms",
+      },
+      {
         title: "Kima",
         type: "video",
         projectId: "kima",

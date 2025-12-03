@@ -74,4 +74,27 @@ export const projects = {
       "https://player.vimeo.com/video/1128816164?autoplay=0&loop=1&title=0&byline=0&portrait=0",
     backgroundGif: "/assets/cut-for-gif.mp4",
   },
+  aurora: {
+    title: "Aurora",
+    longDescription:
+      "Aurora is Israel's leading company specializing in behavioral design for digital platforms, product, and services. Aurora's experts work with leading organizations across all sectors, applying behavioral, cognitive, and data sciences to enhance user experiences and improve business results successfully.",
+    client: "AURORA - TAMAR KORNITZER",
+    date: "19/1/22",
+    role: "ANIMATION",
+    role2: "DESIGN: DOR TENENBAUM",
+    role3: "WEB DEVELOPER: BINTERNET - SHAHAR BROSHI",
+    type: "lottie",
+    lottieFiles: {
+      mainBackground: "/assets/aurora-json/aurora_main_background.json",
+      influencing: "/assets/aurora-json/influencing.json",
+      behavioral: "/assets/aurora-json/behave_new.json",
+      interventional: "/assets/aurora-json/interventional.json",
+      hr: "/assets/aurora-json/hr.json",
+      product: "/assets/aurora-json/product3.json",
+      strategy: "/assets/aurora-json/strategy.json",
+      marketing: "/assets/aurora-json/marketing3.json",
+      rollout: "/assets/aurora-json/rollout.json",
+      test: "/assets/aurora-json/TESTTESTTEST.json",
+    },
+  },
 };

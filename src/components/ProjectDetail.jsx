@@ -1,6 +1,8 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { projects } from "../data/projects";
+import Lottie from "lottie-react";
+import Navbar from "./Navbar";
 
 function ProjectDetail() {
   const { projectId } = useParams();
@@ -26,6 +28,11 @@ function ProjectDetail() {
 
   if (!project) {
     return <div>Project not found</div>;
+  }
+
+  // Special handling for Aurora project
+  if (projectId === "aurora") {
+    return <AuroraProjectDetail project={project} navigate={navigate} />;
   }
 
   console.log("Project data:", project);
@@ -109,6 +116,241 @@ function ProjectDetail() {
               allowFullScreen
             ></iframe>
           </div>
+        </div>
+      </div>
+
+      {/* Back Button */}
+      <button className="back-button" onClick={() => navigate(-1)}>
+        ← Back to Projects
+      </button>
+    </div>
+  );
+}
+
+// Aurora-specific component
+function AuroraProjectDetail({ project, navigate }) {
+  const [mainAnimation, setMainAnimation] = useState(null);
+  const [influencingAnimation, setInfluencingAnimation] = useState(null);
+  const [behavioralAnimation, setBehavioralAnimation] = useState(null);
+  const [interventionalAnimation, setInterventionalAnimation] = useState(null);
+  const [hrAnimation, setHrAnimation] = useState(null);
+  const [productAnimation, setProductAnimation] = useState(null);
+  const [strategyAnimation, setStrategyAnimation] = useState(null);
+  const [marketingAnimation, setMarketingAnimation] = useState(null);
+  const [testAnimation, setTestAnimation] = useState(null);
+  const [rolloutAnimation, setRolloutAnimation] = useState(null);
+
+  useEffect(() => {
+    // Load Lottie animations
+    const loadAnimation = async (path, setter) => {
+      try {
+        const response = await fetch(path);
+        const data = await response.json();
+        setter(data);
+      } catch (error) {
+        console.error(`Error loading animation ${path}:`, error);
+      }
+    };
+
+    if (project.lottieFiles) {
+      loadAnimation(project.lottieFiles.mainBackground, setMainAnimation);
+      loadAnimation(project.lottieFiles.influencing, setInfluencingAnimation);
+      loadAnimation(project.lottieFiles.behavioral, setBehavioralAnimation);
+      loadAnimation(
+        project.lottieFiles.interventional,
+        setInterventionalAnimation
+      );
+      loadAnimation(project.lottieFiles.hr, setHrAnimation);
+      loadAnimation(project.lottieFiles.product, setProductAnimation);
+      loadAnimation(project.lottieFiles.strategy, setStrategyAnimation);
+      loadAnimation(project.lottieFiles.marketing, setMarketingAnimation);
+      loadAnimation(project.lottieFiles.test, setTestAnimation);
+      loadAnimation(project.lottieFiles.rollout, setRolloutAnimation);
+    }
+  }, [project.lottieFiles]);
+
+  return (
+    <div className="aurora-project-page">
+      <Navbar />
+
+      {/* Main Background Animation */}
+      <div className="aurora-hero">
+        {mainAnimation && (
+          <div className="aurora-main-animation">
+            <Lottie animationData={mainAnimation} loop={true} autoplay={true} />
+          </div>
+        )}
+      </div>
+
+      {/* Project Info Section */}
+      <div className="aurora-info-section">
+        <div className="aurora-info-left">
+          <h1 className="aurora-title">{project.title}</h1>
+          <p className="aurora-description">{project.longDescription}</p>
+        </div>
+        <div className="aurora-info-right">
+          <div className="aurora-meta-item">
+            <span className="aurora-meta-label">CLIENT:</span>
+            <span className="aurora-meta-value">{project.client}</span>
+          </div>
+          <div className="aurora-meta-item">
+            <span className="aurora-meta-label">DATE:</span>
+            <span className="aurora-meta-value">{project.date}</span>
+          </div>
+          <div className="aurora-meta-item">
+            <span className="aurora-meta-label">ROLE:</span>
+            <span className="aurora-meta-value">{project.role}</span>
+          </div>
+          <div className="aurora-meta-item">
+            <span className="aurora-meta-label">DESIGN:</span>
+            <span className="aurora-meta-value">
+              {project.role2?.replace("DESIGN: ", "")}
+            </span>
+          </div>
+          <div className="aurora-meta-item">
+            <span className="aurora-meta-label">WEB DEVELOPER:</span>
+            <span className="aurora-meta-value">
+              {project.role3?.replace("WEB DEVELOPER: ", "")}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Catchphrase Section */}
+      <div className="aurora-catchphrase">
+        {influencingAnimation && (
+          <div className="aurora-catchphrase-animation">
+            <Lottie
+              animationData={influencingAnimation}
+              loop={true}
+              autoplay={true}
+            />
+          </div>
+        )}
+        <div className="aurora-catchphrase-text"></div>
+      </div>
+
+      {/* Services Grid */}
+      <div className="aurora-services-grid">
+        <div className="aurora-service-item">
+          {productAnimation && (
+            <div className="aurora-service-animation">
+              <Lottie
+                animationData={productAnimation}
+                loop={true}
+                autoplay={true}
+              />
+            </div>
+          )}
+          <span className="aurora-service-text"></span>
+        </div>
+        <div className="aurora-service-item">
+          {strategyAnimation && (
+            <div className="aurora-service-animation">
+              <Lottie
+                animationData={strategyAnimation}
+                loop={true}
+                autoplay={true}
+              />
+            </div>
+          )}
+          <span className="aurora-service-text"></span>
+        </div>
+        <div className="aurora-service-item">
+          {marketingAnimation && (
+            <div className="aurora-service-animation">
+              <Lottie
+                animationData={marketingAnimation}
+                loop={true}
+                autoplay={true}
+              />
+            </div>
+          )}
+          <span className="aurora-service-text"></span>
+        </div>
+        <div className="aurora-service-item">
+          {hrAnimation && (
+            <div className="aurora-service-animation">
+              <Lottie animationData={hrAnimation} loop={true} autoplay={true} />
+            </div>
+          )}
+          <span className="aurora-service-text"></span>
+        </div>
+        <div className="aurora-service-item">
+          {behavioralAnimation && (
+            <div className="aurora-service-animation">
+              <Lottie
+                animationData={behavioralAnimation}
+                loop={true}
+                autoplay={true}
+              />
+            </div>
+          )}
+          <span className="aurora-service-text"></span>
+        </div>
+
+        <div className="aurora-service-item">
+          {interventionalAnimation && (
+            <div className="aurora-service-animation">
+              <Lottie
+                animationData={interventionalAnimation}
+                loop={true}
+                autoplay={true}
+              />
+            </div>
+          )}
+          <span className="aurora-service-text"></span>
+        </div>
+
+        <div className="aurora-service-item">
+          {testAnimation && (
+            <div className="aurora-service-animation">
+              <Lottie
+                animationData={testAnimation}
+                loop={true}
+                autoplay={true}
+              />
+            </div>
+          )}
+          <span className="aurora-service-text"></span>
+        </div>
+        <div className="aurora-service-item">
+          {rolloutAnimation && (
+            <div className="aurora-service-animation">
+              <Lottie
+                animationData={rolloutAnimation}
+                loop={true}
+                autoplay={true}
+              />
+            </div>
+          )}
+          <span className="aurora-service-text"></span>
+        </div>
+      </div>
+
+      {/* Industries Grid */}
+      <div className="aurora-industries-grid">
+        <div className="aurora-industry-item">health + wellbeing</div>
+        <div className="aurora-industry-item">
+          transport <span className="aurora-purple">{">>>"}ation</span>
+        </div>
+        <div className="aurora-industry-item">
+          public <span className="aurora-purple">(policy)</span>
+        </div>
+        <div className="aurora-industry-item">
+          financial <span className="aurora-purple">$ervices</span>
+        </div>
+        <div className="aurora-industry-item">
+          digi<span className="aurora-purple">{"<tal>"}</span> platforms
+        </div>
+        <div className="aurora-industry-item">
+          educa<span className="aurora-purple">t</span>ion
+        </div>
+        <div className="aurora-industry-item">
+          retail <span className="aurora-purple">consumer</span>
+        </div>
+        <div className="aurora-industry-item">
+          <span className="aurora-purple">sustainability</span> energy & food
         </div>
       </div>
 

@@ -1014,3 +1014,272 @@ footer {
 footer p {
   text-align: center;
 }
+
+/* AURORA PROJECT STYLES */
+.aurora-project-page {
+  background-color: #ffffff;
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+  color: #000;
+}
+
+.aurora-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 3rem;
+  position: relative;
+  z-index: 100;
+}
+
+.aurora-logo {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+}
+
+.aurora-nav {
+  display: flex;
+  gap: 2rem;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.aurora-nav a {
+  color: #000;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.aurora-nav a:hover {
+  opacity: 0.6;
+}
+
+.aurora-hero {
+  position: relative;
+  width: 100%;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  background-color: #faf8f3;
+}
+
+.aurora-main-animation {
+  position: relative;
+  width: 70%;
+  max-width: 900px;
+  height: auto;
+}
+
+.aurora-info-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  padding: 4rem 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+.aurora-info-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.aurora-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.aurora-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+}
+
+.aurora-info-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.aurora-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.aurora-meta-label {
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.aurora-meta-value {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.aurora-catchphrase {
+  text-align: center;
+  padding: 4rem 0;
+  position: relative;
+  background-color: #ffffff;
+}
+
+.aurora-catchphrase-animation {
+  max-width: 1100px;
+  max-height: 850px;
+  margin: 0 auto 2.5rem;
+  height: 400px;
+  background-color: #faf8f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aurora-catchphrase-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.aurora-services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 3rem 0;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateX(-100px);
+  background-color: #ffffff;
+}
+
+.aurora-service-item {
+  background-color: #faf8f3;
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  min-height: 200px;
+}
+
+.aurora-service-animation {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aurora-service-text {
+  font-size: 0.875rem;
+  font-weight: 300;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  color: #000;
+}
+
+.aurora-industries-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem 4rem;
+  padding: 5rem 6rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: #faf8f3;
+}
+
+.aurora-industry-item {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.aurora-purple {
+  color: #8b5cf6;
+}
+
+.aurora-project-page .back-button {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.aurora-project-page .back-button:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  transform: translateY(-2px);
+}
+
+/* Responsive Aurora */
+@media screen and (max-width: 1024px) {
+  .aurora-info-section {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .aurora-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .aurora-industries-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .aurora-header {
+    padding: 1.5rem;
+  }
+
+  .aurora-nav {
+    gap: 1rem;
+    font-size: 0.875rem;
+  }
+
+  .aurora-info-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .aurora-services-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .aurora-industries-grid {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.5rem;
+  }
+
+  .aurora-catchphrase-text {
+    font-size: 1.5rem;
+  }
+}

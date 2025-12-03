@@ -1019,8 +1019,10 @@ footer p {
 .aurora-project-page {
   background-color: #ffffff;
   min-height: 100vh;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", "Poppins", sans-serif;
   color: #000;
+  font-weight: 300;
+  letter-spacing: -0.01em;
 }
 
 .aurora-header {
@@ -1094,6 +1096,8 @@ footer p {
   font-size: 2.5rem;
   font-weight: 700;
   margin: 0;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: -0.02em;
 }
 
 .aurora-description {
@@ -1119,7 +1123,8 @@ footer p {
   font-size: 0.875rem;
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
+  font-family: "Roboto", sans-serif;
 }
 
 .aurora-meta-value {
@@ -1159,10 +1164,10 @@ footer p {
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   padding: 3rem 0;
-  max-width: 900px;
+  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
-  transform: translateX(-100px);
+  transform: translateX(9px);
   background-color: #ffffff;
 }
 
@@ -1173,20 +1178,55 @@ footer p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 1.5rem;
   position: relative;
   min-height: 200px;
 }
 
 .aurora-service-animation {
-  width: 100%;
-  height: 100%;
+  width: 65%;
+  height: 65%;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Better centering for bottom row animations */
+.aurora-service-item:nth-child(5) .aurora-service-animation,
+.aurora-service-item:nth-child(6) .aurora-service-animation,
+.aurora-service-item:nth-child(8) .aurora-service-animation {
+  width: 55%;
+  height: 55%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Make behavioralAnimation bigger */
+.aurora-service-item:nth-child(5) .aurora-service-animation {
+  width: 68%;
+  height: 68%;
+}
+
+/* Move interventionalAnimation higher and make it bigger */
+.aurora-service-item:nth-child(6) .aurora-service-animation {
+  width: 75%;
+  height: 75%;
+  top: 38%;
+  transform: translate(-50%, -50%);
+}
+
+/* Make rolloutAnimation bigger and centered */
+.aurora-service-item:nth-child(8) .aurora-service-animation {
+  width: 70%;
+  height: 70%;
+  top: 50%;
+  left: 52%;
+  transform: translate(-50%, -50%);
 }
 
 .aurora-service-text {
@@ -1210,12 +1250,16 @@ footer p {
 
 .aurora-industry-item {
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 500;
   line-height: 1.6;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: -0.01em;
 }
 
 .aurora-purple {
   color: #8b5cf6;
+  font-family: "Red Hat Display", "Poppins", sans-serif;
+  font-weight: 700;
 }
 
 .aurora-project-page .back-button {

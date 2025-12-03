@@ -6,7 +6,7 @@ export const folders = {
         title: "Aurora",
         type: "lottie",
         projectId: "aurora",
-        poster: "/assets/project-1.png",
+        lottieFile: "/assets/aurora-json/aurora_main_background.json",
         description: "Behavioral design for digital platforms",
       },
       {
@@ -26,14 +26,6 @@ export const folders = {
         videoUrl: "https://vimeo.com/1128816164?share=copy&fl=sv&fe=ci",
         demoUrl: "https://vimeo.com/1128816164?share=copy&fl=sv&fe=ci",
         description: "Motion design for web interface",
-      },
-      {
-        title: "Web Animation Project 3",
-        type: "image",
-        image: "/assets/project-1.png",
-        githubUrl: "https://github.com/",
-        demoUrl: "https://github.com/",
-        description: "UI animation showcase",
       },
     ],
   },

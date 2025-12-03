@@ -1,7 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { folders } from "../data/folders";
 import Navbar from "./Navbar";
+import Lottie from "lottie-react";
 
 function FolderDetail() {
   const { folderId } = useParams();
@@ -49,7 +50,9 @@ function FolderDetail() {
                   }}
                 >
                   <div className="project-image-wrapper">
-                    {project.type === "video" ? (
+                    {project.type === "lottie" ? (
+                      <LottieProjectPreview lottieFile={project.lottieFile} title={project.title} />
+                    ) : project.type === "video" ? (
                       project.poster?.endsWith(".mp4") ? (
                         <video
                           src={project.poster}
@@ -103,6 +106,42 @@ function FolderDetail() {
         ← Back to Projects
       </button>
     </>
+  );
+}
+
+// Component to load and display Lottie animation as preview
+function LottieProjectPreview({ lottieFile, title }) {
+  const [animationData, setAnimationData] = useState(null);
+
+  useEffect(() => {
+    const loadAnimation = async () => {
+      try {
+        const response = await fetch(lottieFile);
+        const data = await response.json();
+        setAnimationData(data);
+      } catch (error) {
+        console.error(`Error loading Lottie animation ${lottieFile}:`, error);
+      }
+    };
+
+    if (lottieFile) {
+      loadAnimation();
+    }
+  }, [lottieFile]);
+
+  if (!animationData) {
+    return <div className="project-img" style={{ backgroundColor: "#faf8f3" }} />;
+  }
+
+  return (
+    <div className="project-img" style={{ backgroundColor: "#faf8f3", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
+      <Lottie
+        animationData={animationData}
+        loop={true}
+        autoplay={true}
+        style={{ width: "100%", height: "100%" }}
+      />
+    </div>
   );
 }
 

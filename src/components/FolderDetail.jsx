@@ -51,7 +51,10 @@ function FolderDetail() {
                 >
                   <div className="project-image-wrapper">
                     {project.type === "lottie" ? (
-                      <LottieProjectPreview lottieFile={project.lottieFile} title={project.title} />
+                      <LottieProjectPreview
+                        lottieFile={project.lottieFile}
+                        title={project.title}
+                      />
                     ) : project.type === "video" ? (
                       project.poster?.endsWith(".mp4") ? (
                         <video
@@ -130,11 +133,22 @@ function LottieProjectPreview({ lottieFile, title }) {
   }, [lottieFile]);
 
   if (!animationData) {
-    return <div className="project-img" style={{ backgroundColor: "#faf8f3" }} />;
+    return (
+      <div className="project-img" style={{ backgroundColor: "#faf8f3" }} />
+    );
   }
 
   return (
-    <div className="project-img" style={{ backgroundColor: "#faf8f3", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
+    <div
+      className="project-img"
+      style={{
+        backgroundColor: "#faf8f3",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        overflow: "hidden",
+      }}
+    >
       <Lottie
         animationData={animationData}
         loop={true}

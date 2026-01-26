@@ -28,14 +28,35 @@ function FolderDetail() {
   return (
     <>
       <Navbar />
-      <section id="projects" style={{ marginTop: "10vh" }}>
-        <p className="section__text__p1">Browse My Recent</p>
-        <h1 className="title">{folder.title}</h1>
-        <p style={{ textAlign: "center", color: "#666", marginBottom: "2rem" }}>
-          {folder.subtitle}
-        </p>
+      <button
+        className="back-button"
+        onClick={() => navigate("/")}
+      >
+        ← Back to Projects
+      </button>
+      <section id="projects" style={{ marginTop: "10vh", paddingLeft: "50px" }}>
+        <h1 className="title" style={{ textAlign: "left", paddingLeft: "1rem" }}>{folder.title}</h1>
+        {folder.description && (
+          <p style={{ 
+            textAlign: "left", 
+            color: "#000", 
+            marginBottom: "2rem",
+            maxWidth: "800px",
+            margin: "0 0 2rem 0",
+            paddingLeft: "1rem",
+            lineHeight: "1.6",
+            fontSize: "1rem"
+          }}>
+            {folder.description}
+          </p>
+        )}
+        {folder.subtitle && !folder.description && (
+          <p style={{ textAlign: "left", color: "#666", marginBottom: "2rem", paddingLeft: "1rem" }}>
+            {folder.subtitle}
+          </p>
+        )}
         <div className="experience-details-container">
-          <div className="projects-grid">
+          <div className="projects-grid" style={{ margin: "3rem 0", maxWidth: "none", paddingLeft: "1rem", paddingRight: "1rem" }}>
             {folder.projects.map((project, index) => (
               <div key={index} className="project-item">
                 <div
@@ -91,23 +112,6 @@ function FolderDetail() {
           </div>
         </div>
       </section>
-      <button
-        className="back-button"
-        onClick={() => navigate("/")}
-        style={{
-          position: "fixed",
-          top: "2rem",
-          left: "2rem",
-          background: "rgba(0, 0, 0, 0.8)",
-          color: "white",
-          border: "none",
-          padding: "1rem 2rem",
-          borderRadius: "50px",
-          cursor: "pointer",
-        }}
-      >
-        ← Back to Projects
-      </button>
     </>
   );
 }

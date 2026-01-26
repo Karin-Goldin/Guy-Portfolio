@@ -35,6 +35,11 @@ function ProjectDetail() {
     return <AuroraProjectDetail project={project} navigate={navigate} />;
   }
 
+  // Special handling for Kima project
+  if (projectId === "kima") {
+    return <KimaProjectDetail project={project} navigate={navigate} />;
+  }
+
   console.log("Project data:", project);
   console.log("Background GIF path:", project.backgroundGif);
 
@@ -114,6 +119,10 @@ function ProjectDetail() {
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
+              style={{
+                transform: `scale(${1 + scrollY * 0.0003})`,
+                transformOrigin: "center center",
+              }}
             ></iframe>
           </div>
         </div>
@@ -158,7 +167,7 @@ function AuroraProjectDetail({ project, navigate }) {
       loadAnimation(project.lottieFiles.behavioral, setBehavioralAnimation);
       loadAnimation(
         project.lottieFiles.interventional,
-        setInterventionalAnimation
+        setInterventionalAnimation,
       );
       loadAnimation(project.lottieFiles.hr, setHrAnimation);
       loadAnimation(project.lottieFiles.product, setProductAnimation);
@@ -332,25 +341,80 @@ function AuroraProjectDetail({ project, navigate }) {
       <div className="aurora-industries-grid">
         <div className="aurora-industry-item">health + wellbeing</div>
         <div className="aurora-industry-item">
-          transport <span className="aurora-purple">{">>>"}ation</span>
+          transport <span className="aurora-purple">{">>>"}</span>ation
         </div>
         <div className="aurora-industry-item">
           public <span className="aurora-purple">(policy)</span>
         </div>
+        <div className="aurora-industry-item">retail consumer</div>
         <div className="aurora-industry-item">
-          financial <span className="aurora-purple">$ervices</span>
+          financial <span className="aurora-purple">$</span>ervices
         </div>
         <div className="aurora-industry-item">
           digi<span className="aurora-purple">{"<tal>"}</span> platforms
         </div>
+        <div className="aurora-industry-item">education</div>
         <div className="aurora-industry-item">
-          educa<span className="aurora-purple">t</span>ion
+          sustain<span className="aurora-purple">ability</span>
+          <br />
+          energy & food
         </div>
-        <div className="aurora-industry-item">
-          retail <span className="aurora-purple">consumer</span>
+      </div>
+
+      {/* Back Button */}
+      <button className="back-button" onClick={() => navigate(-1)}>
+        ← Back to Projects
+      </button>
+    </div>
+  );
+}
+
+// Kima-specific component
+function KimaProjectDetail({ project, navigate }) {
+  return (
+    <div className="kima-project-page">
+      <Navbar />
+
+      {/* Hero with GIF only */}
+      <div className="kima-hero">
+        <img
+          src="/assets/kima.gif"
+          alt="Kima animation"
+          className="kima-gif"
+        />
+      </div>
+
+      {/* Project Info Section */}
+      <div className="kima-info-section">
+        <div className="kima-info-left">
+          <h1 className="kima-project-title">{project.title}</h1>
+          <p className="kima-project-description">{project.longDescription}</p>
         </div>
-        <div className="aurora-industry-item">
-          <span className="aurora-purple">sustainability</span> energy & food
+        <div className="kima-info-right">
+          <div className="kima-meta-item">
+            <span className="kima-meta-label">CLIENT:</span>
+            <span className="kima-meta-value">{project.client}</span>
+          </div>
+          <div className="kima-meta-item">
+            <span className="kima-meta-label">ROLE:</span>
+            <span className="kima-meta-value">{project.role}</span>
+          </div>
+          <div className="kima-meta-item">
+            <span className="kima-meta-label">DESIGN:</span>
+            <span className="kima-meta-value">
+              {project.role2?.replace("DESIGN: ", "")}
+            </span>
+          </div>
+          <div className="kima-meta-item">
+            <span className="kima-meta-label">WEB DEVELOPER:</span>
+            <span className="kima-meta-value">
+              {project.role3?.replace("WEB DEVELOPER: ", "")}
+            </span>
+          </div>
+          <div className="kima-meta-item">
+            <span className="kima-meta-label">DATE:</span>
+            <span className="kima-meta-value">{project.date}</span>
+          </div>
         </div>
       </div>
 

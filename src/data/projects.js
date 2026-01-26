@@ -97,4 +97,17 @@ export const projects = {
       test: "/assets/aurora-json/TESTTESTTEST.json",
     },
   },
+  kima: {
+    title: "Kima",
+    longDescription:
+      "Kima is a decentralized, blockchain-based money transfer protocol. It settles interchain transactions, enabling apps to build on what they're comfortable with, and leaving financial friction in the past.",
+    client: "KIMA - EITAN KATZ, TAL ONN SELA",
+    date: "20/2/23",
+    role: "ANIMATION",
+    role2: "DESIGN: DOR TENENBAUM, YARDEN KARUCHI",
+    role3: "WEB DEVELOPER: BINTERNET - SHAHAR BROSHI",
+    videoUrl:
+      "https://player.vimeo.com/video/1127841129?autoplay=0&loop=1&title=0&byline=0&portrait=0",
+    backgroundGif: "/assets/kima.gif",
+  },
 };

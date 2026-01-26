@@ -1,6 +1,7 @@
 export const folders = {
   "web-animations": {
-    title: "Web Animations",
+    title: "Web Animation",
+    description: "Web animation is a world of fine details and maximum precision. I thrive on short, focused projects where motion isn't just an ornament, but a tool to reinforce the design concept. Here you'll find creative collaborations where I've explored the exact movement needed to bring interfaces to life.",
     projects: [
       {
         title: "Aurora",

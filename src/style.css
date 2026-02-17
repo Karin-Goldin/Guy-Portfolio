@@ -798,10 +798,6 @@ body.profile-in-view #projects {
 .project-description-section {
   padding: 4rem 0;
   background-color: #f8f9fa;
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
-  background-size: 20px 20px;
 }
 
 .container {
@@ -877,10 +873,7 @@ body.profile-in-view #projects {
 
 .project-video-section {
   padding: 4rem 0;
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
-  background-size: 20px 20px;
+  background-color: #ffffff;
 }
 
 .video-wrapper {
@@ -1369,7 +1362,7 @@ footer p {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 4rem;
-  padding: 4rem 6rem;
+  padding: 4rem 6rem 2rem 6rem;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -1421,6 +1414,26 @@ footer p {
   font-weight: 400;
 }
 
+.kima-logo-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1400px;
+  margin: -2rem auto 0 auto;
+  padding-top: 2rem;
+  min-height: 200px;
+  width: 100%;
+}
+
+.kima-logo {
+  max-width: 800px;
+  width: auto;
+  height: auto;
+  max-height: 500px;
+  display: block;
+  object-fit: contain;
+}
+
 .kima-project-page .back-button {
   position: fixed;
   top: 2rem;
@@ -1465,5 +1478,231 @@ footer p {
 
   .kima-info-section {
     padding: 2rem 1.5rem;
+  }
+}
+
+/* BrandBee Project Page */
+.brandbee-project-page {
+  background-color: #ffffff;
+  min-height: 100vh;
+  font-family: "Roboto", "Poppins", sans-serif;
+  color: #000;
+  font-weight: 300;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.brandbee-hero {
+  background-color: #ffffff;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
+.brandbee-gif {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+.brandbee-info-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  padding: 4rem 6rem 2rem 6rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.brandbee-info-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.brandbee-project-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+}
+
+.brandbee-project-description {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  max-width: 80%;
+}
+
+.brandbee-info-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.brandbee-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.brandbee-meta-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.brandbee-meta-value {
+  font-size: 1rem;
+  color: #000;
+  font-weight: 400;
+}
+
+/* Wrapper - logo and grid share exact same width (1200px) */
+.brandbee-logo-grid-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+.brandbee-logo-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -2rem auto 0 auto;
+  padding-top: 2rem;
+  padding-bottom: 0.5rem;
+  min-height: 120px;
+  width: 100%;
+}
+
+.brandbee-logo {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.brandbee-grid-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 12px;
+  column-gap: 12px;
+  width: 100%;
+  margin: -0.5rem 0 0 0;
+  padding: 0;
+}
+
+.brandbee-grid-item {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+}
+
+.brandbee-grid-item-span-2 {
+  grid-column: span 2;
+}
+
+/* Right animation - shrink to fit same square as left (1and12), aligned right */
+.brandbee-grid-item-no-radius {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.brandbee-grid-item-no-radius .brandbee-grid-animation {
+  /* Shrink to match 1and12 square - 2.json is 915x1050, scales to fit square */
+  transform: scale(0.87) translateX(8%);
+  transform-origin: right center;
+}
+
+.brandbee-grid-animation {
+  width: 100%;
+  height: 100%;
+}
+
+.brandbee-grid-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brandbee-project-page .back-button {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.brandbee-project-page .back-button:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  transform: translateY(-2px);
+}
+
+/* Responsive BrandBee */
+@media screen and (max-width: 1024px) {
+  .brandbee-info-section {
+    grid-template-columns: 1fr;
+    padding: 3rem 2rem;
+  }
+
+  .brandbee-project-title {
+    font-size: 2rem;
+  }
+
+  .brandbee-grid-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .brandbee-grid-item-span-2 {
+    grid-column: span 2;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .brandbee-hero {
+    padding: 0;
+  }
+
+  .brandbee-project-title {
+    font-size: 1.5rem;
+  }
+
+  .brandbee-info-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .brandbee-grid-section {
+    grid-template-columns: 1fr;
+  }
+
+  .brandbee-grid-item-span-2 {
+    grid-column: span 1;
   }
 }

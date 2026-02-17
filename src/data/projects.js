@@ -74,6 +74,19 @@ export const projects = {
       "https://player.vimeo.com/video/1128816164?autoplay=0&loop=1&title=0&byline=0&portrait=0",
     backgroundGif: "/assets/cut-for-gif.mp4",
   },
+  brandbee: {
+    title: "Brandbee",
+    longDescription:
+      "Aurora is Israel's leading company specializing in behavioral design for digital platforms, product, and services. Aurora's experts work with leading organizations across all sectors, applying behavioral, cognitive, and data sciences to enhance user experiences and improve business results successfully.",
+    client: "BRANDBEE",
+    date: "7/8/22",
+    role: "ANIMATION",
+    role2: "UX DESIGN: BEN NATHAN",
+    role3: "STRATEGY & DESIGN: DOR TENENBAUM",
+    videoUrl:
+      "https://player.vimeo.com/video/1127841129?autoplay=0&loop=1&title=0&byline=0&portrait=0",
+    backgroundGif: "/assets/brandBee-json/background-gif.gif",
+  },
   aurora: {
     title: "Aurora",
     longDescription:

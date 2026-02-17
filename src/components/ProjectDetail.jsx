@@ -40,6 +40,11 @@ function ProjectDetail() {
     return <KimaProjectDetail project={project} navigate={navigate} />;
   }
 
+  // Special handling for BrandBee project
+  if (projectId === "brandbee") {
+    return <BrandBeeProjectDetail project={project} navigate={navigate} />;
+  }
+
   console.log("Project data:", project);
   console.log("Background GIF path:", project.backgroundGif);
 
@@ -415,6 +420,164 @@ function KimaProjectDetail({ project, navigate }) {
             <span className="kima-meta-label">DATE:</span>
             <span className="kima-meta-value">{project.date}</span>
           </div>
+        </div>
+      </div>
+
+      {/* Logo Section */}
+      <div className="kima-logo-section">
+        <img
+          src="/assets/kima-json/LOGO.jpg"
+          alt="Kima logo"
+          className="kima-logo"
+          onError={(e) => {
+            console.error("Error loading logo from /assets, trying dist path");
+            e.target.src = "/dist/assets/kima-json/LOGO.jpg";
+          }}
+          onLoad={() => console.log("Logo loaded successfully")}
+        />
+      </div>
+
+      {/* Back Button */}
+      <button className="back-button" onClick={() => navigate(-1)}>
+        ← Back to Projects
+      </button>
+    </div>
+  );
+}
+
+// BrandBee grid layout (from image):
+// Row 1: 1and12.json, 2.json
+// Row 2: 3.png, 4.png
+// Row 3: 5.json, 6.json, 7.json, 8.json
+// Row 4: 9.json, 10.json, 11.json, 1and12.json
+// Row 5: 13.json, 14.json, 15.json, 16.json
+const BRANDBEE_GRID_ITEMS = [
+  { file: "1and12.json", type: "json", span: 2 },
+  { file: "2.json", type: "json", span: 2 },
+  { file: "3.png", type: "image", span: 2 },
+  { file: "4.png", type: "image", span: 2 },
+  { file: "5.json", type: "json" },
+  { file: "6.json", type: "json" },
+  { file: "7.json", type: "json" },
+  { file: "8.json", type: "json" },
+  { file: "9.json", type: "json" },
+  { file: "10.json", type: "json" },
+  { file: "11.json", type: "json" },
+  { file: "1and12.json", type: "json" },
+  { file: "13.json", type: "json" },
+  { file: "14.json", type: "json" },
+  { file: "15.json", type: "json" },
+  { file: "16.json", type: "json" },
+];
+
+// BrandBee-specific component
+function BrandBeeProjectDetail({ project, navigate }) {
+  const [animations, setAnimations] = useState({});
+
+  useEffect(() => {
+    const jsonFiles = BRANDBEE_GRID_ITEMS.filter((i) => i.type === "json")
+      .map((i) => i.file)
+      .filter((f, i, arr) => arr.indexOf(f) === i);
+
+    Promise.all(
+      jsonFiles.map((f) =>
+        fetch(`/assets/brandBee-json/${f}`).then((r) => r.json())
+      )
+    )
+      .then((data) => {
+        const obj = {};
+        jsonFiles.forEach((f, i) => (obj[f] = data[i]));
+        setAnimations(obj);
+      })
+      .catch((err) => console.error("Error loading BrandBee animations:", err));
+  }, []);
+
+  return (
+    <div className="brandbee-project-page">
+      <Navbar />
+
+      {/* Hero with GIF only */}
+      <div className="brandbee-hero">
+        <img
+          src="/assets/brandBee-json/background-gif.gif"
+          alt="BrandBee animation"
+          className="brandbee-gif"
+        />
+      </div>
+
+      {/* Project Info Section */}
+      <div className="brandbee-info-section">
+        <div className="brandbee-info-left">
+          <h1 className="brandbee-project-title">{project.title}</h1>
+          <p className="brandbee-project-description">
+            {project.longDescription}
+          </p>
+        </div>
+        <div className="brandbee-info-right">
+          <div className="brandbee-meta-item">
+            <span className="brandbee-meta-label">CLIENT:</span>
+            <span className="brandbee-meta-value">{project.client}</span>
+          </div>
+          <div className="brandbee-meta-item">
+            <span className="brandbee-meta-label">ROLE:</span>
+            <span className="brandbee-meta-value">{project.role}</span>
+          </div>
+          <div className="brandbee-meta-item">
+            <span className="brandbee-meta-label">UX DESIGN:</span>
+            <span className="brandbee-meta-value">
+              {project.role2?.replace("UX DESIGN: ", "")}
+            </span>
+          </div>
+          <div className="brandbee-meta-item">
+            <span className="brandbee-meta-label">STRATEGY & DESIGN:</span>
+            <span className="brandbee-meta-value">
+              {project.role3?.replace("STRATEGY & DESIGN: ", "")}
+            </span>
+          </div>
+          <div className="brandbee-meta-item">
+            <span className="brandbee-meta-label">DATE:</span>
+            <span className="brandbee-meta-value">{project.date}</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Logo + Grid wrapper - same width */}
+      <div className="brandbee-logo-grid-wrapper">
+        <div className="brandbee-logo-section">
+          <img
+            src="/assets/brandBee-json/logo.png"
+            alt="BrandBee logo"
+            className="brandbee-logo"
+          />
+        </div>
+
+        {/* Grid: rows 1-2 have 2 items (span 2), rows 3-5 have 4 items */}
+        <div className="brandbee-grid-section">
+          {BRANDBEE_GRID_ITEMS.map((item, index) => (
+            <div
+              key={index}
+              className={`brandbee-grid-item ${
+                item.file === "2.json" ? "brandbee-grid-item-no-radius" : ""
+              } ${item.span === 2 ? "brandbee-grid-item-span-2" : ""}`}
+            >
+              {item.type === "json" ? (
+                animations[item.file] && (
+                  <Lottie
+                    animationData={animations[item.file]}
+                    loop={true}
+                    autoplay={true}
+                    className="brandbee-grid-animation"
+                  />
+                )
+              ) : (
+                <img
+                  src={`/assets/brandBee-json/${item.file}`}
+                  alt={`BrandBee ${index + 1}`}
+                  className="brandbee-grid-image"
+                />
+              )}
+            </div>
+          ))}
         </div>
       </div>
 

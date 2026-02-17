@@ -10,6 +10,9 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+
+# Large assets (exceed GitHub 100MB limit)
+public/assets/brandBee-json/background-gif.gif
 *.local
 
 # Editor directories and files

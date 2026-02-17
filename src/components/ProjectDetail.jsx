@@ -359,19 +359,53 @@ function AuroraProjectDetail({ project, navigate }) {
   );
 }
 
+// Kima grid items - Lottie animations with labels
+const KIMA_GRID_ITEMS = [
+  { file: "chainA.json", label: "Chain A" },
+  { file: "chainAChainB.json", label: "Chain A to Chain B Transaction" },
+  { file: "crossChainTransaction.json", label: "Cross Chain Transactions" },
+  { file: "anyUser.json", label: "Any User, Any Blockchain" },
+  {
+    file: "noSmartContracts.json",
+    label: "No Smart Contracts, No Code Vulnerabilities",
+  },
+];
+
 // Kima-specific component
 function KimaProjectDetail({ project, navigate }) {
+  const [animations, setAnimations] = useState({});
+
+  useEffect(() => {
+    const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+    const loadAll = async () => {
+      const obj = {};
+      const files = [
+        ...KIMA_GRID_ITEMS.map((i) => i.file),
+        "whatMakesKimaDiffrenece.json",
+      ];
+      await Promise.all(
+        files.map(async (file) => {
+          try {
+            const url = `${base}/assets/kima-json/${encodeURIComponent(file)}`;
+            const r = await fetch(url);
+            if (r.ok) obj[file] = await r.json();
+          } catch (e) {
+            console.warn(`Kima: failed to load ${file}`, e);
+          }
+        }),
+      );
+      setAnimations(obj);
+    };
+    loadAll();
+  }, []);
+
   return (
     <div className="kima-project-page">
       <Navbar />
 
       {/* Hero with GIF only */}
       <div className="kima-hero">
-        <img
-          src="/assets/kima.gif"
-          alt="Kima animation"
-          className="kima-gif"
-        />
+        <img src="/assets/kima.gif" alt="Kima animation" className="kima-gif" />
       </div>
 
       {/* Project Info Section */}
@@ -422,6 +456,35 @@ function KimaProjectDetail({ project, navigate }) {
         />
       </div>
 
+      {/* Grid Section */}
+      <div className="kima-grid-section">
+        {KIMA_GRID_ITEMS.map((item) => (
+          <div key={item.file} className="kima-grid-item">
+            {animations[item.file] && (
+              <Lottie
+                animationData={animations[item.file]}
+                loop={true}
+                autoplay={true}
+                className="kima-grid-animation"
+              />
+            )}
+            <span className="kima-grid-label">{item.label}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* What makes Kima different - large section */}
+      <div className="kima-what-makes-different">
+        {animations["whatMakesKimaDiffrenece.json"] && (
+          <Lottie
+            animationData={animations["whatMakesKimaDiffrenece.json"]}
+            loop={true}
+            autoplay={true}
+            className="kima-what-makes-different-animation"
+          />
+        )}
+      </div>
+
       {/* Back Button */}
       <button className="back-button" onClick={() => navigate(-1)}>
         ← Back to Projects
@@ -466,8 +529,8 @@ function BrandBeeProjectDetail({ project, navigate }) {
 
     Promise.all(
       jsonFiles.map((f) =>
-        fetch(`/assets/brandBee-json/${f}`).then((r) => r.json())
-      )
+        fetch(`/assets/brandBee-json/${f}`).then((r) => r.json()),
+      ),
     )
       .then((data) => {
         const obj = {};

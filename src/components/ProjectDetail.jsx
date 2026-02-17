@@ -342,28 +342,13 @@ function AuroraProjectDetail({ project, navigate }) {
         </div>
       </div>
 
-      {/* Industries Grid */}
-      <div className="aurora-industries-grid">
-        <div className="aurora-industry-item">health + wellbeing</div>
-        <div className="aurora-industry-item">
-          transport <span className="aurora-purple">{">>>"}</span>ation
-        </div>
-        <div className="aurora-industry-item">
-          public <span className="aurora-purple">(policy)</span>
-        </div>
-        <div className="aurora-industry-item">retail consumer</div>
-        <div className="aurora-industry-item">
-          financial <span className="aurora-purple">$</span>ervices
-        </div>
-        <div className="aurora-industry-item">
-          digi<span className="aurora-purple">{"<tal>"}</span> platforms
-        </div>
-        <div className="aurora-industry-item">education</div>
-        <div className="aurora-industry-item">
-          sustain<span className="aurora-purple">ability</span>
-          <br />
-          energy & food
-        </div>
+      {/* Industries - image */}
+      <div className="aurora-industries-section">
+        <img
+          src="/assets/aurora-json/lowerSQDesign.png"
+          alt="Aurora industries"
+          className="aurora-industries-image"
+        />
       </div>
 
       {/* Back Button */}
@@ -496,12 +481,16 @@ function BrandBeeProjectDetail({ project, navigate }) {
     <div className="brandbee-project-page">
       <Navbar />
 
-      {/* Hero with GIF only */}
+      {/* Hero with video */}
       <div className="brandbee-hero">
-        <img
-          src="/assets/brandBee-json/background-gif.gif"
-          alt="BrandBee animation"
+        <video
+          src="/assets/brandBee-json/background-gif.mp4"
           className="brandbee-gif"
+          autoPlay
+          loop
+          muted
+          playsInline
+          aria-label="BrandBee animation"
         />
       </div>
 

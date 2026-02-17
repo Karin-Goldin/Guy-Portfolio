@@ -85,7 +85,7 @@ export const projects = {
     role3: "STRATEGY & DESIGN: DOR TENENBAUM",
     videoUrl:
       "https://player.vimeo.com/video/1127841129?autoplay=0&loop=1&title=0&byline=0&portrait=0",
-    backgroundGif: "/assets/brandBee-json/background-gif.gif",
+    backgroundGif: "/assets/brandBee-json/background-gif.mp4",
   },
   aurora: {
     title: "Aurora",

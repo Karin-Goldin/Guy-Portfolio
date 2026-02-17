@@ -1238,28 +1238,24 @@ footer p {
   color: #000;
 }
 
-.aurora-industries-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 3rem 4rem;
-  padding: 5rem 6rem;
-  max-width: 1400px;
-  margin: 0 auto;
+.aurora-industries-section {
+  padding: 3rem 0;
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateX(9px);
   background-color: #faf8f3;
+  overflow: visible;
 }
 
-.aurora-industry-item {
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.6;
-  font-family: "Roboto", sans-serif;
-  letter-spacing: -0.01em;
-}
-
-.aurora-purple {
-  color: #8b5cf6;
-  font-family: "Red Hat Display", "Poppins", sans-serif;
-  font-weight: 700;
+.aurora-industries-image {
+  width: 100%;
+  height: auto;
+  padding-bottom: 100px;
+  object-fit: contain;
+  display: block;
+  transform: scale(1.2);
+  transform-origin: center center;
 }
 
 .aurora-project-page .back-button {
@@ -1293,10 +1289,6 @@ footer p {
   .aurora-services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .aurora-industries-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media screen and (max-width: 600px) {
@@ -1318,9 +1310,12 @@ footer p {
     padding: 1rem;
   }
 
-  .aurora-industries-grid {
-    grid-template-columns: 1fr;
-    padding: 2rem 1.5rem;
+  .aurora-industries-section {
+    padding: 2rem 1rem;
+  }
+
+  .aurora-industries-image {
+    transform: scale(1.1);
   }
 
   .aurora-catchphrase-text {
@@ -1510,6 +1505,7 @@ footer p {
   height: auto;
   max-width: 100%;
   display: block;
+  object-fit: cover;
 }
 
 .brandbee-info-section {

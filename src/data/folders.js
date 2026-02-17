@@ -23,7 +23,7 @@ export const folders = {
         title: "BrandBee",
         type: "video",
         projectId: "brandbee",
-        poster: "/assets/brandBee-json/background-gif.gif",
+        poster: "/assets/brandBee-json/background-gif.mp4",
         videoUrl: "https://vimeo.com/1127841129?share=copy&fl=sv&fe=ci",
         demoUrl: "https://vimeo.com/1127841129?share=copy&fl=sv&fe=ci",
         description: "Rewards app for shopping and surveys",

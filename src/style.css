@@ -1461,14 +1461,14 @@ footer p {
 
 .kima-what-makes-different {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 3rem 2rem 5rem;
 }
 
 .kima-what-makes-different-animation {
   width: 100%;
-  min-height: 500px;
+  min-height: 700px;
 }
 
 .kima-project-page .back-button {
@@ -1512,7 +1512,7 @@ footer p {
   }
 
   .kima-what-makes-different-animation {
-    min-height: 400px;
+    min-height: 550px;
   }
 }
 
@@ -1539,7 +1539,7 @@ footer p {
   }
 
   .kima-what-makes-different-animation {
-    min-height: 350px;
+    min-height: 450px;
   }
 }
 

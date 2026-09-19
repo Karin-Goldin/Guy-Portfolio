@@ -57,14 +57,6 @@ function Navbar() {
             </li>
             <li>
               <a
-                href="#about"
-                className={activeSection === "about" ? "active" : ""}
-              >
-                About
-              </a>
-            </li>
-            <li>
-              <a
                 href="#contact"
                 className={activeSection === "contact" ? "active" : ""}
               >
@@ -91,15 +83,6 @@ function Navbar() {
             <span></span>
           </div>
           <div className={`menu-links ${isMenuOpen ? "open" : ""}`}>
-            <li>
-              <a
-                href="#about"
-                onClick={toggleMenu}
-                className={activeSection === "about" ? "active" : ""}
-              >
-                About
-              </a>
-            </li>
             <li>
               <a
                 href="#projects"

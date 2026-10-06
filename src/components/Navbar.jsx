@@ -57,6 +57,14 @@ function Navbar() {
             </li>
             <li>
               <a
+                href="#about"
+                className={activeSection === "about" ? "active" : ""}
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a
                 href="#contact"
                 className={activeSection === "contact" ? "active" : ""}
               >
@@ -90,6 +98,15 @@ function Navbar() {
                 className={activeSection === "projects" ? "active" : ""}
               >
                 Projects
+              </a>
+            </li>
+            <li>
+              <a
+                href="#about"
+                onClick={toggleMenu}
+                className={activeSection === "about" ? "active" : ""}
+              >
+                About
               </a>
             </li>
             <li>

@@ -4,6 +4,7 @@ import "./mediaqueries.css";
 import Navbar from "./components/Navbar";
 import Profile from "./components/Profile";
 import Projects from "./components/Projects";
+import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ProjectDetail from "./components/ProjectDetail";
@@ -20,6 +21,7 @@ function App() {
               <Navbar />
               <Profile />
               <Projects />
+              <About />
               <Contact />
               <Footer />
             </>

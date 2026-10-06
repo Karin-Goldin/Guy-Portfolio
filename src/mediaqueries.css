@@ -67,36 +67,41 @@
   footer {
     height: 40vh;
   }
-  /* Push projects section further down on small phones */
   #projects {
-    margin-top: 7rem;
+    margin-top: 2rem;
   }
-  /* Tighter mobile navbar spacing and move hamburger left */
   #hamburger-nav {
-    padding: 0 1rem; /* reduce right padding */
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 1.25rem;
+    z-index: 1200;
+    overflow: visible;
   }
   #hamburger-nav .hamburger-menu {
-    margin-right: 0.25rem; /* nudge icon slightly left */
+    margin-right: 0;
   }
-  /* Override desktop logo left padding on mobile */
   #hamburger-nav .logo {
-    padding-left: 1rem;
+    padding-left: 0;
+  }
+  #hamburger-nav .menu-links {
+    z-index: 1201;
+    right: 0;
+    background-color: white;
   }
   #profile {
-    height: 100vh !important;
-    min-height: 100vh !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    margin-bottom: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 11vh 0 1.5rem !important;
     margin: 0 !important;
-    width: 100vw !important;
-    max-width: 100vw !important;
+    width: 100% !important;
+    max-width: 100% !important;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    left: 0;
-    right: 0;
+    left: auto;
+    right: auto;
+    overflow: visible;
   }
   article {
     font-size: 1rem;
@@ -129,32 +134,33 @@
     text-align: center;
   }
   .section__pic-container {
-    width: 100vw !important;
-    height: 100vh !important;
-    min-height: 100vh !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 !important;
     margin: 0 !important;
     position: relative;
-    max-width: 100vw !important;
-    left: 0;
-    right: 0;
+    max-width: 100% !important;
+    left: auto;
+    right: auto;
   }
   .hero-gif {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1.2);
-    width: 100vw !important;
-    height: 100vh !important;
-    max-width: none !important;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
     max-height: none !important;
-    min-width: 100vw;
-    min-height: 100vh;
-    object-fit: cover;
+    min-width: 0;
+    min-height: 0;
+    object-fit: contain;
     object-position: center;
+    z-index: 1;
   }
   .section__text__p2 {
     font-size: 1.25rem;
@@ -172,11 +178,11 @@
   }
   section#profile {
     margin: 0 !important;
-    padding: 0 !important;
-    width: 100vw !important;
-    max-width: 100vw !important;
-    background-color: transparent !important;
+    padding: 11vh 0 1.5rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    background-color: white !important;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
   }
 }

@@ -89,9 +89,9 @@
     background-color: white;
   }
   #profile {
-    height: auto !important;
-    min-height: 0 !important;
-    padding: 11vh 0 1.5rem !important;
+    height: 68vh !important;
+    min-height: 68vh !important;
+    padding: 10vh 0 0 !important;
     margin: 0 !important;
     width: 100% !important;
     max-width: 100% !important;
@@ -101,7 +101,7 @@
     position: relative;
     left: auto;
     right: auto;
-    overflow: visible;
+    overflow: hidden;
   }
   article {
     font-size: 1rem;
@@ -135,7 +135,7 @@
   }
   .section__pic-container {
     width: 100% !important;
-    height: auto !important;
+    height: 100% !important;
     min-height: 0 !important;
     display: flex;
     justify-content: center;
@@ -146,15 +146,16 @@
     max-width: 100% !important;
     left: auto;
     right: auto;
+    overflow: hidden;
   }
   .hero-gif {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    width: 100% !important;
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 185vw !important;
     height: auto !important;
-    max-width: 100% !important;
+    max-width: none !important;
     max-height: none !important;
     min-width: 0;
     min-height: 0;
@@ -178,11 +179,13 @@
   }
   section#profile {
     margin: 0 !important;
-    padding: 11vh 0 1.5rem !important;
+    padding: 10vh 0 0 !important;
     width: 100% !important;
     max-width: 100% !important;
+    height: 68vh !important;
+    min-height: 68vh !important;
     background-color: white !important;
     position: relative;
-    overflow: visible;
+    overflow: hidden;
   }
 }

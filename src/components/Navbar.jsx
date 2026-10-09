@@ -79,7 +79,34 @@ function Navbar() {
           className="logo"
           onClick={() => (window.location.href = "#profile")}
         >
-          Guy Goldin
+          <svg
+            className="logo-mark"
+            width="22"
+            height="22"
+            viewBox="-12 -12 24 24"
+            aria-hidden="true"
+          >
+            <g fill="#D4457F">
+              <rect x="-3.2" y="-11" width="6.4" height="22" rx="3.2" />
+              <rect
+                x="-3.2"
+                y="-11"
+                width="6.4"
+                height="22"
+                rx="3.2"
+                transform="rotate(60)"
+              />
+              <rect
+                x="-3.2"
+                y="-11"
+                width="6.4"
+                height="22"
+                rx="3.2"
+                transform="rotate(-60)"
+              />
+            </g>
+          </svg>
+          <span>guy goldin</span>
         </div>
         <div className="hamburger-menu">
           <div

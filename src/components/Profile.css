@@ -1,0 +1,192 @@
+/* ============================================
+   Hero (#profile) — mobile first
+   ============================================ */
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+#profile {
+  --ink: #141414;
+  --muted: #4a4a4a;
+  --blue: #2f5be0;
+  --pink: #d4457f;
+  /* Mobile header is a fixed 72px bar */
+  --header-h: 72px;
+
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 100svh; /* fills the phone screen, so the arrow sits at the bottom */
+  /* Nav is sticky and in normal flow, so pull the hero up under it.
+     padding-top then clears the header. */
+  margin: calc(-1 * var(--header-h)) 0 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--header-h) 0 24px;
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  color: var(--ink);
+}
+
+/* ---------- Animation ---------- */
+/* Neutralize old template rules (style.css / mediaqueries.css) */
+#profile .section__pic-container {
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 924 / 800;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  transform: none;
+}
+
+#profile .hero-video {
+  position: static;
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  margin: 0;
+  transform: none;
+  border-radius: 0;
+  object-fit: contain;
+  -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent);
+  mask-image: linear-gradient(to bottom, #000 82%, transparent);
+}
+
+/* ---------- Text ---------- */
+.hero__content {
+  width: 100%;
+  max-width: 560px;
+  box-sizing: border-box;
+  padding: 16px 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hero__title {
+  margin: 0;
+  font-size: clamp(36px, 10.5vw, 56px);
+  line-height: 1.02;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.hero__accent {
+  color: var(--blue);
+}
+
+.hero__subtitle {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+/* ---------- Scroll cue ---------- */
+.hero__scroll {
+  margin-top: auto; /* pushes the cue to the bottom of the screen */
+  padding: 24px 8px 4px;
+  min-width: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero__scroll:hover,
+.hero__scroll:active {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.hero__scroll:focus-visible {
+  outline: 3px solid var(--pink);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+.hero__scroll-arrow {
+  animation: hero-bob 1.6s ease-in-out infinite;
+}
+
+@keyframes hero-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__scroll-arrow {
+    animation: none;
+  }
+}
+
+/* ---------- Short phones (e.g. iPhone SE): shrink the animation so everything fits ---------- */
+@media (max-width: 899px) and (max-height: 720px) {
+  .section__pic-container {
+    max-width: 290px;
+  }
+
+  .hero__scroll {
+    padding-top: 12px;
+  }
+}
+
+/* ---------- Desktop: video and text side by side ---------- */
+@media (min-width: 900px) {
+  #profile {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  .section__pic-container {
+    flex: 1 1 560px;
+    max-width: 640px;
+  }
+
+  .hero__content {
+    flex: 1 1 420px;
+    padding: 0;
+  }
+
+  .hero__scroll {
+    flex-basis: 100%;
+    margin-top: 0;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0;
+    padding-top: 0;
+  }
+}

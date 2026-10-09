@@ -1,8 +1,4 @@
 @media screen and (max-width: 1400px) {
-  #profile {
-    height: 83vh;
-    margin-bottom: 6rem;
-  }
   .about-containers {
     flex-wrap: wrap;
   }
@@ -21,12 +17,43 @@
   }
   #hamburger-nav {
     display: flex;
+    height: 72px;
+    box-sizing: border-box;
+    padding: 0 24px;
+  }
+  #hamburger-nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    font-family: "Bricolage Grotesque", system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 21px;
+    letter-spacing: -0.02em;
+    color: #141414;
+    cursor: pointer;
+  }
+  #hamburger-nav .logo-mark {
+    display: block;
+    flex: none;
+  }
+  #hamburger-nav .hamburger-icon {
+    width: 26px;
+    height: 18px;
+  }
+  #hamburger-nav .hamburger-icon span {
+    height: 2.4px;
+    border-radius: 2px;
+    background-color: #141414;
+  }
+  #hamburger-nav .hamburger-icon span:nth-child(2) {
+    width: 70%;
+    margin-left: auto;
   }
   #experience,
   .experience-details-container {
     margin-top: 2rem;
   }
-  #profile,
   .section-container {
     display: block;
   }
@@ -46,19 +73,8 @@
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
-  .section__pic-container {
-    width: 275px;
-    height: 275px;
-    margin: 0 auto 2rem;
-  }
   .about-containers {
     margin-top: 0;
-  }
-  #profile {
-    height: fit-content;
-    min-height: auto;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
   }
 }
 
@@ -73,7 +89,7 @@
   #hamburger-nav {
     box-sizing: border-box;
     width: 100%;
-    padding: 0 1.25rem;
+    padding: 0 24px;
     z-index: 1200;
     overflow: visible;
   }
@@ -87,21 +103,6 @@
     z-index: 1201;
     right: 0;
     background-color: white;
-  }
-  #profile {
-    height: 68vh !important;
-    min-height: 68vh !important;
-    padding: 10vh 0 0 !important;
-    margin: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    left: auto;
-    right: auto;
-    overflow: hidden;
   }
   article {
     font-size: 1rem;
@@ -133,36 +134,6 @@
     gap: 0.5rem;
     text-align: center;
   }
-  .section__pic-container {
-    width: 100% !important;
-    height: 100% !important;
-    min-height: 0 !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 !important;
-    margin: 0 !important;
-    position: relative;
-    max-width: 100% !important;
-    left: auto;
-    right: auto;
-    overflow: hidden;
-  }
-  .hero-gif {
-    position: absolute;
-    top: 52%;
-    left: 50%;
-    transform: translate(-54%, -50%);
-    width: 185vw !important;
-    height: auto !important;
-    max-width: none !important;
-    max-height: none !important;
-    min-width: 0;
-    min-height: 0;
-    object-fit: contain;
-    object-position: center;
-    z-index: 1;
-  }
   .section__text__p2 {
     font-size: 1.25rem;
   }
@@ -176,16 +147,5 @@
     margin: 0;
     padding-top: 2rem;
     padding-bottom: 2rem;
-  }
-  section#profile {
-    margin: 0 !important;
-    padding: 10vh 0 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: 68vh !important;
-    min-height: 68vh !important;
-    background-color: white !important;
-    position: relative;
-    overflow: hidden;
   }
 }

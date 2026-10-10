@@ -34,7 +34,7 @@ function FolderDetail() {
       >
         ← Back to Projects
       </button>
-      <section id="projects" style={{ marginTop: "10vh", paddingLeft: "50px" }}>
+      <section className="folder-page" style={{ marginTop: "10vh", paddingLeft: "50px" }}>
         <h1 className="title" style={{ textAlign: "left", paddingLeft: "1rem" }}>{folder.title}</h1>
         {folder.description && (
           <p style={{ 

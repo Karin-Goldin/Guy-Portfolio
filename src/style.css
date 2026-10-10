@@ -458,9 +458,6 @@ article .icon {
   transition:
     opacity 0.3s ease,
     visibility 0.3s ease;
-  margin-top: 8rem; /* push projects further below profile */
-  /* Ensure anchor navigation shows the section title below sticky nav */
-  scroll-margin-top: 15vh;
 }
 
 /* Hide projects section only when profile section is in the viewport */
@@ -495,7 +492,7 @@ body.profile-in-view #projects {
 
 /* PROJECTS GRID STYLES */
 
-.projects-grid {
+.folder-page .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
@@ -504,12 +501,12 @@ body.profile-in-view #projects {
   padding: 2rem 1rem;
 }
 
-.project-item {
+.folder-page .project-item {
   display: flex;
   flex-direction: column;
 }
 
-.project-card {
+.folder-page .project-card {
   background: white;
   overflow: hidden;
   transition: all 0.4s ease;
@@ -518,39 +515,39 @@ body.profile-in-view #projects {
   height: 100%;
 }
 
-.project-card:hover {
+.folder-page .project-card:hover {
   transform: translateY(-10px);
 }
 
-.project-image-wrapper {
+.folder-page .project-image-wrapper {
   width: 100%;
   height: 250px;
   overflow: hidden;
   background: rgb(250, 250, 250);
 }
 
-.project-image-wrapper .folder-content {
+.folder-page .project-image-wrapper .folder-content {
   overflow: visible;
 }
 
-.project-img {
+.folder-page .project-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
 }
 
-.project-video {
+.folder-page .project-video {
   width: 100%;
   height: 100%;
   border: none;
 }
 
-.project-card:hover .project-img {
+.folder-page .project-card:hover .project-img {
   transform: scale(1.05);
 }
 
-.project-info {
+.folder-page .project-info {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -574,7 +571,7 @@ body.profile-in-view #projects {
 }
 
 /* Folder Card Styling */
-.folder-card {
+.folder-page .folder-card {
   background: white;
   border-radius: 12px;
   overflow: hidden;
@@ -588,12 +585,12 @@ body.profile-in-view #projects {
   flex-direction: column;
 }
 
-.folder-card:hover {
+.folder-page .folder-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-.folder-preview {
+.folder-page .folder-preview {
   position: relative;
   height: 280px;
   background: #f8f9fa;
@@ -604,14 +601,14 @@ body.profile-in-view #projects {
   padding: 2px;
 }
 
-.preview-item {
+.folder-page .preview-item {
   background-size: cover;
   background-position: center;
   position: relative;
   overflow: hidden;
 }
 
-.preview-item::after {
+.folder-page .preview-item::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -619,11 +616,11 @@ body.profile-in-view #projects {
   transition: opacity 0.3s ease;
 }
 
-.folder-card:hover .preview-item::after {
+.folder-page .folder-card:hover .preview-item::after {
   opacity: 0;
 }
 
-.folder-overlay {
+.folder-page .folder-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
@@ -638,24 +635,24 @@ body.profile-in-view #projects {
   transition: opacity 0.3s ease;
 }
 
-.folder-card:hover .folder-overlay {
+.folder-page .folder-card:hover .folder-overlay {
   opacity: 0;
 }
 
-.folder-icon {
+.folder-page .folder-icon {
   width: 64px;
   height: 64px;
   margin-bottom: 16px;
 }
 
-.folder-count {
+.folder-page .folder-count {
   color: white;
   font-size: 18px;
   font-weight: 600;
   text-align: center;
 }
 
-.folder-info {
+.folder-page .folder-info {
   padding: 24px;
   flex-grow: 1;
   display: flex;
@@ -663,26 +660,26 @@ body.profile-in-view #projects {
   justify-content: center;
 }
 
-.folder-title-text {
+.folder-page .folder-title-text {
   font-size: 20px;
   font-weight: 600;
   color: #1a1a1a;
   margin: 0 0 8px 0;
 }
 
-.folder-subtitle {
+.folder-page .folder-subtitle {
   font-size: 14px;
   color: #666;
   margin: 0;
 }
 
 /* Stacked effect for Gaming folder */
-.folder-card.stacked {
+.folder-page .folder-card.stacked {
   position: relative;
 }
 
-.folder-card.stacked::before,
-.folder-card.stacked::after {
+.folder-page .folder-card.stacked::before,
+.folder-page .folder-card.stacked::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -692,12 +689,12 @@ body.profile-in-view #projects {
   z-index: -1;
 }
 
-.folder-card.stacked::before {
+.folder-page .folder-card.stacked::before {
   transform: translateY(-4px) translateX(-4px) scale(0.98);
   opacity: 0.5;
 }
 
-.folder-card.stacked::after {
+.folder-page .folder-card.stacked::after {
   transform: translateY(-8px) translateX(-8px) scale(0.96);
   opacity: 0.3;
 }
@@ -868,7 +865,7 @@ body.profile-in-view #projects {
   letter-spacing: 0.5px;
 }
 
-.project-video-section {
+.folder-page .project-video-section {
   padding: 4rem 0;
   background-color: #ffffff;
 }
@@ -882,7 +879,7 @@ body.profile-in-view #projects {
   max-width: 1000px;
 }
 
-.project-video-player {
+.folder-page .project-video-player {
   position: absolute;
   top: 0;
   left: 0;
@@ -941,21 +938,21 @@ body.profile-in-view #projects {
   margin-top: 0.75rem;
 }
 
-.project-btn {
+.folder-page .project-btn {
   color: black;
   border-color: rgb(163, 163, 163);
 }
 
 /* RESPONSIVE GRID */
 @media screen and (max-width: 1024px) {
-  .projects-grid {
+  .folder-page .projects-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .projects-grid {
+  .folder-page .projects-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
